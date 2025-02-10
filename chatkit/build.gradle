@@ -2,13 +2,13 @@ apply plugin: 'com.android.library'
 apply plugin: 'maven-publish'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion '29.0.2'
+    compileSdkVersion 33
 
     defaultConfig {
-        minSdkVersion 14
+        namespace "com.stfalcon.chatkit"
+        minSdkVersion 19
         versionCode 1
-        versionName '0.4.1'
+        versionName '1.0.0'
         consumerProguardFiles 'proguard.txt'
     }
     android {
@@ -22,22 +22,6 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    afterEvaluate {
-        publishing {
-            publications {
-                // Creates a Maven publication called "release".
-                release(MavenPublication) {
-                    // Applies the component for the release build variant.
-                    from components.release
-
-                    // You can then customize attributes of the publication as shown below.
-                    groupId = 'com.github.stfalcon'
-                    artifactId = 'chatkit'
-                    version = '0.4.1'
-                }
-            }
-        }
-    }
 }
 
 dependencies {
@@ -45,6 +29,6 @@ dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
-    implementation "com.google.android:flexbox:1.0.0"
+    implementation 'com.google.android.flexbox:flexbox:3.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
 }

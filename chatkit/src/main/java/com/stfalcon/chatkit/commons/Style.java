@@ -31,6 +31,7 @@ import androidx.core.content.ContextCompat;
 
 import com.stfalcon.chatkit.R;
 
+
 /**
  * Base class for chat component styles
  */
@@ -47,15 +48,15 @@ public abstract class Style {
     }
 
     protected final int getSystemAccentColor() {
-        return getSystemColor(R.attr.colorAccent);
+        return getSystemColor(androidx.appcompat.R.attr.colorAccent);
     }
 
     protected final int getSystemPrimaryColor() {
-        return getSystemColor(R.attr.colorPrimary);
+        return getSystemColor(androidx.appcompat.R.attr.colorPrimary);
     }
 
     protected final int getSystemPrimaryDarkColor() {
-        return getSystemColor(R.attr.colorPrimaryDark);
+        return getSystemColor(androidx.appcompat.R.attr.colorPrimaryDark);
     }
 
     protected final int getSystemPrimaryTextColor() {
