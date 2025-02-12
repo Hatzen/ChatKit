@@ -44,3 +44,30 @@ dependencies {
     implementation 'com.google.android.flexbox:flexbox:3.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
 }
+
+// Ensure JAVA_HOME is set correctly
+tasks.withType(JavaCompile).configureEach {
+    options.fork = true
+    options.forkOptions.executable = "${System.getenv('JAVA_HOME')}/bin/javac"
+}
+
+// Configure publishing
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = 'com.github.stfalcon'
+            artifactId = 'chatkit'
+            version = '1.1.2'
+
+            afterEvaluate {
+                from components.findByName('release')
+            }
+        }
+    }
+    repositories {
+        maven {
+            name = 'jitpack'
+            url = uri("https://jitpack.io")
+        }
+    }
+}
