@@ -46,10 +46,10 @@ dependencies {
 }
 
 // Ensure JAVA_HOME is set correctly
-tasks.withType(JavaCompile).configureEach {
-    options.fork = true
-    options.forkOptions.executable = "${System.getenv('JAVA_HOME')}/bin/javac"
-}
+//tasks.withType(JavaCompile).configureEach {
+//    options.fork = true
+//    options.forkOptions.executable = "${System.getenv('JAVA_HOME')}/bin/javac"
+//}
 
 // Configure publishing
 publishing {
